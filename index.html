@@ -18,8 +18,8 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
   
   <!-- Stylesheet -->
-  <script type="module" crossorigin src="./assets/index-zD4TFR9X.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-CUJw2Unb.css">
+  <script type="module" crossorigin src="./assets/index-dDUfkmse.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D0ajz_z3.css">
 </head>
 <body>
 
@@ -33,19 +33,19 @@
     <div class="luxury-gold-mesh"></div>
   </div>
 
-  <!-- Capa 2: Fondo Hero (Video Nocturno de CDMX + Imagen Majestuosa de la Catedral) -->
+  <!-- Capa 2: Fondo Hero (Video Nocturno de CDMX + Palacio de Bellas Artes Iluminado de Noche) -->
   <div class="hero-backdrop-layer" id="hero-backdrop" aria-hidden="true">
     <div class="video-container">
       <video id="bg-video" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; opacity: 0.35; display: none;">
-        <source src="/video.mp4" type="video/mp4">
+        <source src="./video.mp4" type="video/mp4">
       </video>
       <canvas id="bg-video-canvas"></canvas>
     </div>
 
-    <!-- Imagen de la Catedral Metropolitana de Noche Superpuesta al Video -->
-    <div class="catedral-image-layer">
-      <img src="./images/catedral-hero.jpg" alt="Catedral Metropolitana de noche" class="catedral-img" id="catedral-hero-img">
-      <div class="catedral-gradient-blend"></div>
+    <!-- Imagen del Palacio de Bellas Artes Iluminado de Noche Superpuesta al Video -->
+    <div class="monument-image-layer">
+      <img src="./images/bellas-artes-hero.jpg" alt="Palacio de Bellas Artes iluminado de noche" class="monument-img" id="hero-monument-img">
+      <div class="monument-gradient-blend"></div>
     </div>
   </div>
 
@@ -161,37 +161,39 @@
     <section class="story-section hero-section" id="inicio">
       <div class="container hero-grid">
         <div class="hero-content">
-          <span class="eyebrow">Transporte Ejecutivo Regional · Con Reservación Previa</span>
+          <span class="eyebrow">Transporte Ejecutivo Regional</span>
           <h1 class="display-title">
             Llegue a su destino con <span class="gold-gradient">tranquilidad.</span>
           </h1>
           <p class="body-lead">
-            Traslados privados desde Allende y Santiago hacia Monterrey, su zona metropolitana y el aeropuerto. Atención directa, precio confirmado y servicio puntual con chofer profesional.
+            Traslados privados desde Allende y Santiago hacia Monterrey, su zona metropolitana y el aeropuerto. Atención directa, precio confirmado y chofer profesional.
           </p>
           <div class="hero-actions">
             <a href="#" class="btn btn-primary magnetic-btn whatsapp-concierge-btn btn-glow-pulse" data-service="Solicitud de Traslado" data-origin="Allende / Santiago / Monterrey" data-dest="Aeropuerto / Zona Metropolitana">
               <span>Solicitar cotización</span>
               <i data-lucide="send"></i>
             </a>
-            <a href="#servicios" class="btn btn-secondary magnetic-btn">
+            <a href="#servicios" class="btn btn-secondary magnetic-btn hero-secondary-btn">
               <span>Ver servicios</span>
               <i data-lucide="chevron-right"></i>
             </a>
           </div>
 
-          <!-- Puntos de Confianza Inmediata -->
-          <div style="display: flex; flex-wrap: wrap; gap: 20px; color: var(--text-secondary); font-size: 0.86rem; font-weight: 600;">
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <i data-lucide="shield" style="width: 17px; height: 17px; color: var(--gold-light);"></i>
-              Pago Seguro
+          <!-- Puntos de Confianza Inmediata Minimalistas -->
+          <div class="hero-trust-bar">
+            <div class="hero-trust-item">
+              <i data-lucide="shield"></i>
+              <span>Pago Seguro</span>
             </div>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <i data-lucide="check" style="width: 17px; height: 17px; color: var(--gold-light);"></i>
-              Precio Sin Sorpresas
+            <span class="hero-trust-dot">·</span>
+            <div class="hero-trust-item">
+              <i data-lucide="check"></i>
+              <span>Precio Sin Sorpresas</span>
             </div>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <i data-lucide="phone" style="width: 17px; height: 17px; color: var(--gold-light);"></i>
-              Atención Directa
+            <span class="hero-trust-dot">·</span>
+            <div class="hero-trust-item">
+              <i data-lucide="phone"></i>
+              <span>Atención Directa</span>
             </div>
           </div>
         </div>
@@ -201,9 +203,9 @@
     <!-- ========================================================
          LA DIFERENCIA REGIUM (BENEFICIOS)
          ======================================================== -->
-    <section class="services-section" style="padding-top: 80px;" id="diferencia">
+    <section class="services-section" id="diferencia">
       <div class="container">
-        <div style="max-width: 720px; margin-bottom: 50px;">
+        <div class="section-intro">
           <span class="eyebrow">La diferencia Regium</span>
           <h2 class="display-title" style="font-size: clamp(2.2rem, 4.5vw, 3.6rem);">
             No prometemos lujo.<br>Prometemos hacer bien el trabajo.
@@ -225,7 +227,7 @@
                 Su horario queda apartado de forma definitiva una vez recibido el pago, garantizando disponibilidad exclusiva de la unidad.
               </p>
             </div>
-            <div style="font-size: 0.8rem; color: var(--gold-light); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">
+            <div class="service-card-badge">
               01 · Certeza de Viaje
             </div>
           </div>
@@ -241,7 +243,7 @@
                 Comunicación directa por WhatsApp con quien conduce antes, durante y después del servicio, sin conmutadores ni esperas.
               </p>
             </div>
-            <div style="font-size: 0.8rem; color: var(--gold-light); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">
+            <div class="service-card-badge">
               02 · Trato Directo
             </div>
           </div>
@@ -257,7 +259,7 @@
                 El precio se confirma antes de pagar y reservar. Sin tarifas dinámicas de último momento ni cobros imprevistos.
               </p>
             </div>
-            <div style="font-size: 0.8rem; color: var(--gold-light); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">
+            <div class="service-card-badge">
               03 · Transparencia Total
             </div>
           </div>
@@ -273,7 +275,7 @@
                 Amenidades esenciales para que su trayecto sea productivo, relajado y confortable de principio a fin.
               </p>
             </div>
-            <div style="font-size: 0.8rem; color: var(--gold-light); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">
+            <div class="service-card-badge">
               04 · Confort a Bordo
             </div>
           </div>
@@ -282,34 +284,34 @@
     </section>
 
     <!-- ========================================================
-         RAZONES DE CONFIANZA (GRID RÁPIDO)
+         RAZONES DE CONFIANZA (MICRO-GRID EJECUTIVO)
          ======================================================== -->
-    <section class="stats-section" style="padding: 70px 0;">
+    <section class="trust-strip-section" id="confianza">
       <div class="container">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px;">
-          <div style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 18px 24px; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 14px; font-weight: 600;">
-            <i data-lucide="check" style="color: var(--gold-light); width: 20px; height: 20px;"></i>
-            Atención directa y personalizada
+        <div class="trust-strip-grid">
+          <div class="trust-strip-item">
+            <i data-lucide="check"></i>
+            <span>Atención directa y personalizada</span>
           </div>
-          <div style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 18px 24px; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 14px; font-weight: 600;">
-            <i data-lucide="check" style="color: var(--gold-light); width: 20px; height: 20px;"></i>
-            Puntualidad programada rigurosa
+          <div class="trust-strip-item">
+            <i data-lucide="check"></i>
+            <span>Puntualidad programada rigurosa</span>
           </div>
-          <div style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 18px 24px; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 14px; font-weight: 600;">
-            <i data-lucide="check" style="color: var(--gold-light); width: 20px; height: 20px;"></i>
-            Precio cerrado antes de abordar
+          <div class="trust-strip-item">
+            <i data-lucide="check"></i>
+            <span>Precio cerrado antes de abordar</span>
           </div>
-          <div style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 18px 24px; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 14px; font-weight: 600;">
-            <i data-lucide="check" style="color: var(--gold-light); width: 20px; height: 20px;"></i>
-            Reservación sencilla en 3 pasos
+          <div class="trust-strip-item">
+            <i data-lucide="check"></i>
+            <span>Reservación sencilla en 3 pasos</span>
           </div>
-          <div style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 18px 24px; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 14px; font-weight: 600;">
-            <i data-lucide="check" style="color: var(--gold-light); width: 20px; height: 20px;"></i>
-            Comunicación continua y clara
+          <div class="trust-strip-item">
+            <i data-lucide="check"></i>
+            <span>Comunicación continua y clara</span>
           </div>
-          <div style="background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 18px 24px; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 14px; font-weight: 600;">
-            <i data-lucide="check" style="color: var(--gold-light); width: 20px; height: 20px;"></i>
-            Servicio profesional sin intermediarios
+          <div class="trust-strip-item">
+            <i data-lucide="check"></i>
+            <span>Servicio profesional sin intermediarios</span>
           </div>
         </div>
       </div>
@@ -318,53 +320,53 @@
     <!-- ========================================================
          EXPERIENCIA DEL CONDUCTOR
          ======================================================== -->
-    <section class="story-section" id="experiencia" style="padding: 110px 0;">
-      <div class="container hero-grid" style="align-items: stretch;">
+    <section class="story-section experience-section" id="experiencia">
+      <div class="container hero-grid experience-grid">
         <!-- Panel Editorial Izquierdo -->
-        <div style="background: linear-gradient(145deg, rgba(16, 20, 26, 0.85) 0%, rgba(8, 10, 14, 0.95) 100%); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: 48px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="experience-editorial-card">
           <div>
             <span class="eyebrow">Atención Dedicada</span>
-            <blockquote style="font-size: clamp(1.8rem, 3.2vw, 2.6rem); font-weight: 700; line-height: 1.18; letter-spacing: -0.03em; color: #ffffff; margin-bottom: 20px;">
+            <blockquote class="experience-quote">
               "Su traslado es atendido directamente por quien conduce."
             </blockquote>
-            <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7;">
+            <p class="experience-lead-text">
               Comunicación transparente, puntualidad y esmero personal antes, durante y después del trayecto para personas que valoran la serenidad.
             </p>
           </div>
-          <div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; color: var(--gold-light); text-transform: uppercase;">
+          <div class="experience-brand-tag">
             Regium Transporte Ejecutivo
           </div>
         </div>
 
         <!-- Puntos Numéricos Derecha -->
-        <div style="display: flex; flex-direction: column; justify-content: center; gap: 28px;">
-          <div style="display: grid; grid-template-columns: 48px 1fr; gap: 20px; align-items: start;">
-            <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(197, 168, 105, 0.12); border: 1px solid var(--gold-primary); display: grid; place-items: center; color: var(--gold-light); font-weight: 800; font-size: 0.9rem;">
+        <div class="experience-points-col">
+          <div class="experience-point-row">
+            <div class="point-badge">
               01
             </div>
             <div>
-              <h3 style="font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-bottom: 6px;">Atención respetuosa</h3>
-              <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">Un servicio formal y discreto para personas con agenda rigurosa.</p>
+              <h3 class="point-title">Atención respetuosa</h3>
+              <p class="point-desc">Un servicio formal y discreto para personas con agenda rigurosa.</p>
             </div>
           </div>
 
-          <div style="display: grid; grid-template-columns: 48px 1fr; gap: 20px; align-items: start;">
-            <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(197, 168, 105, 0.12); border: 1px solid var(--gold-primary); display: grid; place-items: center; color: var(--gold-light); font-weight: 800; font-size: 0.9rem;">
+          <div class="experience-point-row">
+            <div class="point-badge">
               02
             </div>
             <div>
-              <h3 style="font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-bottom: 6px;">Comunicación directa</h3>
-              <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">Seguimiento en tiempo real por WhatsApp desde la cotización hasta el destino final.</p>
+              <h3 class="point-title">Comunicación directa</h3>
+              <p class="point-desc">Seguimiento en tiempo real por WhatsApp desde la cotización hasta el destino final.</p>
             </div>
           </div>
 
-          <div style="display: grid; grid-template-columns: 48px 1fr; gap: 20px; align-items: start;">
-            <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(197, 168, 105, 0.12); border: 1px solid var(--gold-primary); display: grid; place-items: center; color: var(--gold-light); font-weight: 800; font-size: 0.9rem;">
+          <div class="experience-point-row">
+            <div class="point-badge">
               03
             </div>
             <div>
-              <h3 style="font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-bottom: 6px;">Servicio organizado</h3>
-              <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">Horario previamente bloqueado y confirmación formal tras el pago aprobado.</p>
+              <h3 class="point-title">Servicio organizado</h3>
+              <p class="point-desc">Horario previamente bloqueado y confirmación formal tras el pago aprobado.</p>
             </div>
           </div>
         </div>
@@ -374,7 +376,7 @@
     <!-- ========================================================
          EL VEHÍCULO / FLOTA
          ======================================================== -->
-    <section class="fleet-section" id="vehiculo" style="padding: 100px 0;">
+    <section class="fleet-section" id="vehiculo">
       <div class="container">
         <div class="fleet-showcase-card">
           <div>
@@ -522,12 +524,12 @@
         </div>
 
         <!-- Cobertura Strip -->
-        <div style="margin-top: 40px; background: linear-gradient(135deg, rgba(18, 24, 34, 0.9) 0%, rgba(8, 10, 14, 0.95) 100%); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: 42px 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px;">
-          <div style="max-width: 680px;">
-            <h3 style="font-size: 1.6rem; font-weight: 700; color: #ffffff; margin-bottom: 8px;">
+        <div class="coverage-banner">
+          <div class="coverage-info">
+            <h3 class="coverage-title">
               Allende, Santiago, Monterrey y zona metropolitana.
             </h3>
-            <p style="color: var(--text-secondary); margin: 0; font-size: 1rem;">
+            <p class="coverage-desc">
               Traslados al aeropuerto, viajes de regreso, eventos de ida y vuelta, citas y rutas regionales previamente reservadas.
             </p>
           </div>
@@ -544,14 +546,14 @@
          ======================================================== -->
     <section class="timeline-section" id="proceso">
       <div class="container">
-        <div style="max-width: 680px; margin-bottom: 50px;">
+        <div class="section-intro">
           <span class="eyebrow">Reservación</span>
           <h2 class="display-title" style="font-size: clamp(2.2rem, 4vw, 3.4rem);">
             En tres pasos.
           </h2>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        <div class="timeline-track">
           <div class="timeline-step-card">
             <span class="timeline-step-num">PASO 01</span>
             <h3 class="timeline-step-title">Solicite la cotización</h3>
@@ -583,52 +585,52 @@
     <!-- ========================================================
          PREGUNTAS FRECUENTES (ACCORDION)
          ======================================================== -->
-    <section class="story-section" id="preguntas" style="padding: 100px 0;">
-      <div class="container" style="max-width: 860px;">
-        <div style="margin-bottom: 40px;">
+    <section class="faq-section" id="preguntas">
+      <div class="container faq-container">
+        <div class="section-intro">
           <span class="eyebrow">Preguntas Frecuentes</span>
           <h2 class="display-title" style="font-size: clamp(2.2rem, 4vw, 3.4rem);">
             Antes de viajar.
           </h2>
         </div>
 
-        <div style="display: flex; flex-direction: column; gap: 16px;">
-          <details style="background: rgba(16, 20, 26, 0.65); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 24px 28px; cursor: pointer;">
-            <summary style="font-size: 1.15rem; font-weight: 700; color: #ffffff; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+        <div class="faq-list">
+          <details class="faq-card">
+            <summary class="faq-summary">
               ¿Cuántas personas pueden viajar?
-              <span style="color: var(--gold-light); font-size: 1.3rem;">+</span>
+              <span class="faq-icon">+</span>
             </summary>
-            <p style="color: var(--text-secondary); margin-top: 16px; margin-bottom: 0; line-height: 1.7;">
+            <p class="faq-answer">
               La unidad actual es recomendable para hasta 3 pasajeros cómodos. La capacidad final depende también de la cantidad y tamaño de maletas o equipaje.
             </p>
           </details>
 
-          <details style="background: rgba(16, 20, 26, 0.65); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 24px 28px; cursor: pointer;">
-            <summary style="font-size: 1.15rem; font-weight: 700; color: #ffffff; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          <details class="faq-card">
+            <summary class="faq-summary">
               ¿Cómo se confirma la reservación?
-              <span style="color: var(--gold-light); font-size: 1.3rem;">+</span>
+              <span class="faq-icon">+</span>
             </summary>
-            <p style="color: var(--text-secondary); margin-top: 16px; margin-bottom: 0; line-height: 1.7;">
+            <p class="faq-answer">
               Después de acordar la cotización, recibirá un enlace de pago seguro en línea. El servicio y el horario quedan formalmente reservados en cuanto el pago es aprobado.
             </p>
           </details>
 
-          <details style="background: rgba(16, 20, 26, 0.65); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 24px 28px; cursor: pointer;">
-            <summary style="font-size: 1.15rem; font-weight: 700; color: #ffffff; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          <details class="faq-card">
+            <summary class="faq-summary">
               ¿Puedo reservar un viaje redondo?
-              <span style="color: var(--gold-light); font-size: 1.3rem;">+</span>
+              <span class="faq-icon">+</span>
             </summary>
-            <p style="color: var(--text-secondary); margin-top: 16px; margin-bottom: 0; line-height: 1.7;">
+            <p class="faq-answer">
               Sí. Es posible programar ida y regreso para aeropuerto, eventos, consultas médicas y otros compromisos con horarios convenidos.
             </p>
           </details>
 
-          <details style="background: rgba(16, 20, 26, 0.65); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 24px 28px; cursor: pointer;">
-            <summary style="font-size: 1.15rem; font-weight: 700; color: #ffffff; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          <details class="faq-card">
+            <summary class="faq-summary">
               ¿Atienden solicitudes inmediatas?
-              <span style="color: var(--gold-light); font-size: 1.3rem;">+</span>
+              <span class="faq-icon">+</span>
             </summary>
-            <p style="color: var(--text-secondary); margin-top: 16px; margin-bottom: 0; line-height: 1.7;">
+            <p class="faq-answer">
               Regium trabaja exclusivamente con reservación previa para garantizar máxima puntualidad. Las solicitudes de viaje para el mismo día quedan estrictamente sujetas a disponibilidad de unidad.
             </p>
           </details>
@@ -639,23 +641,23 @@
     <!-- ========================================================
          CONDICIONES Y POLÍTICAS CLARAS
          ======================================================== -->
-    <section class="story-section" id="politicas" style="padding: 90px 0; border-top: 1px solid var(--glass-border);">
+    <section class="policies-section" id="politicas">
       <div class="container">
-        <div style="max-width: 680px; margin-bottom: 50px;">
+        <div class="section-intro">
           <span class="eyebrow">Condiciones Principales</span>
           <h2 class="display-title" style="font-size: clamp(2.2rem, 4vw, 3.4rem);">
             Información clara antes de reservar.
           </h2>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+        <div class="policies-grid">
           <!-- Política 1 -->
-          <div style="background: rgba(16, 20, 26, 0.7); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 32px;">
-            <h3 style="color: #ffffff; font-size: 1.25rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
-              <i data-lucide="clock" style="color: var(--gold-light); width: 20px; height: 20px;"></i>
+          <div class="policy-card">
+            <h3 class="policy-title">
+              <i data-lucide="clock"></i>
               Cancelaciones y cambios
             </h3>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; color: var(--text-secondary); font-size: 0.92rem; padding: 0;">
+            <ul class="policy-list">
               <li>✦ <strong>Más de 48 horas:</strong> Reembolso del 100%.</li>
               <li>✦ <strong>Entre 24 y 48 horas:</strong> Reembolso del 50%.</li>
               <li>✦ <strong>Menos de 24 horas:</strong> Sin reembolso.</li>
@@ -664,12 +666,12 @@
           </div>
 
           <!-- Política 2 -->
-          <div style="background: rgba(16, 20, 26, 0.7); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 32px;">
-            <h3 style="color: #ffffff; font-size: 1.25rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
-              <i data-lucide="compass" style="color: var(--gold-light); width: 20px; height: 20px;"></i>
+          <div class="policy-card">
+            <h3 class="policy-title">
+              <i data-lucide="compass"></i>
               Espera y Aeropuerto
             </h3>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; color: var(--text-secondary); font-size: 0.92rem; padding: 0;">
+            <ul class="policy-list">
               <li>✦ <strong>Tolerancia general:</strong> 10 minutos de espera en recogidas.</li>
               <li>✦ <strong>Vuelos Nacionales:</strong> 30 minutos de cortesía tras aterrizaje.</li>
               <li>✦ <strong>Vuelos Internacionales:</strong> 60 minutos de cortesía en aduana.</li>
