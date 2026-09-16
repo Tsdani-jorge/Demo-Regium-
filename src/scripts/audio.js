@@ -72,12 +72,14 @@ export class CabinAudio {
 
     if (!this.isPlaying) {
       // Fade in smoothly
-      this.masterGain.gain.linearRampToValueAtTime(0.2, this.ctx.currentTime + 1.5);
+      this.masterGain.gain.setValueAtTime(this.masterGain.gain.value, this.ctx.currentTime);
+      this.masterGain.gain.linearRampToValueAtTime(0.18, this.ctx.currentTime + 1.2);
       this.isPlaying = true;
       if (this.button) this.button.classList.add('audio-active');
     } else {
       // Fade out smoothly
-      this.masterGain.gain.linearRampToValueAtTime(0.001, this.ctx.currentTime + 0.8);
+      this.masterGain.gain.setValueAtTime(this.masterGain.gain.value, this.ctx.currentTime);
+      this.masterGain.gain.linearRampToValueAtTime(0.001, this.ctx.currentTime + 0.6);
       this.isPlaying = false;
       if (this.button) this.button.classList.remove('audio-active');
     }

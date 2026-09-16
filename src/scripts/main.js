@@ -29,19 +29,23 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
-  // 2. Initialize Three.js WebGL Scene
+  // 2. Initialize Three.js WebGL Scene (with safe fallback if WebGL unsupported)
   const canvas = document.getElementById('webgl-canvas');
   let threeScene = null;
   if (canvas) {
-    threeScene = new ThreeScene(canvas);
+    try {
+      threeScene = new ThreeScene(canvas);
+    } catch (err) {
+      console.warn('WebGL scene initialization skipped:', err);
+    }
   }
 
   // 3. Initialize Lenis Smooth Scroll
   const lenis = new Lenis({
-    duration: 1.4,
+    duration: 1.3,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     smoothWheel: true,
-    touchMultiplier: 1.8,
+    touchMultiplier: 1.6,
   });
 
   lenis.on('scroll', ScrollTrigger.update);
@@ -50,6 +54,20 @@ document.addEventListener('DOMContentLoaded', () => {
     lenis.raf(time * 1000);
   });
   gsap.ticker.lagSmoothing(0);
+
+  // 3b. Universal Smooth Scrolling for all internal anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const targetId = anchor.getAttribute('href');
+      if (targetId && targetId !== '#' && targetId.startsWith('#')) {
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          lenis.scrollTo(targetEl, { offset: -70, duration: 1.2 });
+        }
+      }
+    });
+  });
 
   // 4. Connect Scroll to 3D Camera Path
   ScrollTrigger.create({
@@ -69,13 +87,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (heroBackdrop) {
     gsap.to(heroBackdrop, {
       opacity: 0,
-      scale: 1.06,
-      filter: 'blur(10px)',
+      scale: 1.05,
+      filter: 'blur(8px)',
       ease: 'power1.out',
       scrollTrigger: {
         trigger: '#inicio',
         start: 'top top',
-        end: 'bottom 10%',
+        end: 'bottom 15%',
         scrub: true,
       },
     });
@@ -83,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (monumentImg) {
     gsap.to(monumentImg, {
-      y: -80,
+      y: -60,
       ease: 'none',
       scrollTrigger: {
         trigger: '#inicio',
@@ -139,89 +157,67 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. Header Scroll State
   const siteHeader = document.querySelector('.site-header');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 40) {
       siteHeader?.classList.add('scrolled');
     } else {
       siteHeader?.classList.remove('scrolled');
     }
-  });
+  }, { passive: true });
 
-  // 6. Section Reveals with GSAP
+  // 6. Section Reveals with GSAP (once: true para evitar parpadeos al volver a subir)
   const cards = document.querySelectorAll('.service-glass-card, .timeline-step-card, .testimonial-card, .trust-strip-item, .policy-card, .faq-card');
   cards.forEach((card) => {
     gsap.fromTo(
       card,
-      { opacity: 0, y: 40 },
+      { opacity: 0, y: 35 },
       {
         opacity: 1,
         y: 0,
-        duration: 1.1,
+        duration: 0.9,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: card,
-          start: 'top 85%',
-          toggleActions: 'play none none reverse',
+          start: 'top 88%',
+          once: true,
         },
       }
     );
   });
 
-  // 7. 3D Tilt Effect on Service Cards
-  const serviceCards = document.querySelectorAll('.service-glass-card');
-  serviceCards.forEach((card) => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      const rotateX = (y / (rect.height / 2)) * -9;
-      const rotateY = (x / (rect.width / 2)) * 9;
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
-    });
+  // 7. 3D Tilt Effect on Service Cards (solo en mouse/desktop para no trabar táctil)
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const serviceCards = document.querySelectorAll('.service-glass-card');
+    serviceCards.forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        const rotateX = (y / (rect.height / 2)) * -7;
+        const rotateY = (x / (rect.width / 2)) * 7;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+      });
 
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+      });
     });
-  });
+  }
 
-  // 8. Animated Counters for Stats
-  const statNumbers = document.querySelectorAll('.stat-num-val');
-  statNumbers.forEach((stat) => {
-    const target = parseInt(stat.getAttribute('data-count'), 10);
-    ScrollTrigger.create({
-      trigger: stat,
-      start: 'top 85%',
-      once: true,
-      onEnter: () => {
-        let current = 0;
-        const step = Math.ceil(target / 45);
-        const timer = setInterval(() => {
-          current += step;
-          if (current >= target) {
-            stat.textContent = target.toLocaleString();
-            clearInterval(timer);
-          } else {
-            stat.textContent = current.toLocaleString();
-          }
-        }, 30);
-      },
-    });
-  });
-
-  // 10. Initialize Audio & Luxury Cursor
+  // 8. Initialize Audio & Luxury Cursor
   const audioBtn = document.getElementById('audio-toggle');
   new CabinAudio(audioBtn);
   new LuxuryCursor();
 
-  // 11. Setup Concierge Links
+  // 9. Setup Concierge Links (WhatsApp)
   setupConcierge();
 
-  // 12. Initialize Background Motion Video / Bokeh Loop
-  new CityVideoBackground('bg-video-canvas', 'bg-video');
+  // 10. Initialize Background Motion Bokeh Loop (limpio y transparente)
+  new CityVideoBackground('bg-video-canvas');
   if (document.getElementById('catedral-video-canvas')) {
     new CityVideoBackground('catedral-video-canvas');
   }
 
-  // 13. Mobile Drawer Navigation Controller
+  // 11. Mobile Drawer Navigation Controller
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileDrawer = document.getElementById('mobile-drawer');
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
@@ -237,6 +233,13 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     mobileMenuBtn.addEventListener('click', () => toggleMenu());
+
+    // Close on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
+        toggleMenu(false);
+      }
+    });
 
     mobileNavLinks.forEach((link) => {
       link.addEventListener('click', (e) => {

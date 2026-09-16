@@ -122,20 +122,13 @@ body {
   transition: opacity 0.5s ease-out;
 }
 
-.catedral-fixed-backdrop canvas {
+.monument-bokeh-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: 0.65;
-}
-
-.video-container {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  z-index: 3;
 }
 
 .monument-image-layer,
@@ -2184,7 +2177,7 @@ body:hover .custom-cursor {
 
   /* Footer */
   .site-footer {
-    padding: 40px 0 20px;
+    padding: 40px 0 calc(90px + env(safe-area-inset-bottom, 0px));
   }
 
   .footer-top-grid {
