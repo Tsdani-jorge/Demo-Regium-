@@ -99,7 +99,7 @@ body {
   pointer-events: none;
 }
 
-/* Capa de Fondo Hero (Video + Imagen Catedral) */
+/* Capa de Fondo Hero (Video + Imagen Bellas Artes) */
 .hero-backdrop-layer {
   position: fixed;
   inset: 0;
@@ -108,6 +108,27 @@ body {
   overflow: hidden;
   will-change: opacity, transform, filter;
   transition: opacity 0.4s ease-out;
+}
+
+/* Capa de Fondo Fijo: Catedral Metropolitana Iluminada de Noche (Sección Inferior) */
+.catedral-fixed-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+  will-change: opacity, transform, filter;
+  transition: opacity 0.5s ease-out;
+}
+
+.catedral-fixed-backdrop canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.65;
 }
 
 .video-container {
@@ -2138,26 +2159,27 @@ body:hover .custom-cursor {
     margin-bottom: 22px;
   }
 
-  /* Sección Catedral Metropolitana en Móvil */
+  /* Sección y Fondo Catedral Metropolitana en Móvil */
   .catedral-section {
-    min-height: 90svh;
+    min-height: 85svh;
     padding: 58px 0 44px;
+    background: transparent;
   }
 
-  .catedral-section .catedral-monument-img {
+  .catedral-img {
     object-position: center 20%;
-    opacity: 0.85;
+    opacity: 0.88;
   }
 
-  .catedral-section .catedral-gradient-blend {
+  .catedral-gradient-blend {
     background: 
       linear-gradient(to bottom, 
-        rgba(8, 9, 10, 1) 0%, 
-        rgba(8, 9, 10, 0.4) 18%, 
-        rgba(8, 9, 10, 0.52) 60%, 
+        rgba(8, 9, 10, 0.7) 0%, 
+        rgba(8, 9, 10, 0.22) 20%, 
+        rgba(8, 9, 10, 0.45) 60%, 
         rgba(8, 9, 10, 0.98) 100%
       ),
-      radial-gradient(circle at center, transparent 25%, rgba(8, 9, 10, 0.75) 100%);
+      radial-gradient(circle at center, transparent 30%, rgba(8, 9, 10, 0.75) 100%);
   }
 
   /* Footer */

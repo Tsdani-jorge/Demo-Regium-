@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4b. Transición Cinemática: Video + Palacio de Bellas Artes se desvanecen al bajar para dar paso al Fondo de Puro Lujo
   const heroBackdrop = document.getElementById('hero-backdrop');
-  const monumentImg = document.getElementById('hero-monument-img') || document.getElementById('catedral-hero-img');
+  const monumentImg = document.getElementById('hero-monument-img');
   if (heroBackdrop) {
     gsap.to(heroBackdrop, {
       opacity: 0,
@@ -94,24 +94,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4c. Parallax Cinemático para la Catedral en la Sección Inferior
-  const catedralMonumentImg = document.getElementById('catedral-monument-img') || document.getElementById('catedral-cta-img');
-  if (catedralMonumentImg) {
+  // 4c. Transición Cinemática: Catedral Metropolitana Iluminada de Noche para la Sección Inferior
+  const catedralBackdrop = document.getElementById('catedral-fixed-backdrop');
+  const catedralFixedImg = document.getElementById('catedral-fixed-img');
+
+  if (catedralBackdrop) {
+    // Aparece con suavidad al llegar a #servicios y se mantiene visible en toda la sección inferior
     gsap.fromTo(
-      catedralMonumentImg,
-      { y: -60, scale: 1.06 },
+      catedralBackdrop,
+      { opacity: 0, scale: 1.05 },
       {
-        y: 40,
+        opacity: 0.95,
         scale: 1,
-        ease: 'none',
+        ease: 'power1.out',
         scrollTrigger: {
-          trigger: '#contacto',
-          start: 'top bottom',
-          end: 'bottom top',
+          trigger: '#servicios',
+          start: 'top 80%',
+          end: 'top 20%',
           scrub: true,
         },
       }
     );
+
+    // Parallax majestuoso para la imagen de la Catedral
+    if (catedralFixedImg) {
+      gsap.fromTo(
+        catedralFixedImg,
+        { y: -30 },
+        {
+          y: 40,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '#servicios',
+            endTrigger: '#contacto',
+            start: 'top bottom',
+            end: 'bottom bottom',
+            scrub: true,
+          },
+        }
+      );
+    }
   }
 
   // 5. Header Scroll State
