@@ -18,8 +18,8 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
   
   <!-- Stylesheet -->
-  <script type="module" crossorigin src="./assets/index-C1Uwi7eQ.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-CG5O0kGZ.css">
+  <script type="module" crossorigin src="./assets/index-Biwvs6gF.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BGLsTar9.css">
 </head>
 <body>
 
@@ -33,29 +33,25 @@
     <div class="luxury-gold-mesh"></div>
   </div>
 
-  <!-- Capa 2: Fondo Hero (Video Nocturno de CDMX + Palacio de Bellas Artes Iluminado de Noche) -->
+  <!-- Capa 2: Fondo Hero (Palacio de Bellas Artes Iluminado de Noche + Bokeh Dorado) -->
   <div class="hero-backdrop-layer" id="hero-backdrop" aria-hidden="true">
-    <div class="video-container">
-      <video id="bg-video" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; opacity: 0.35; display: none;">
-        <source src="./video.mp4" type="video/mp4">
-      </video>
-      <canvas id="bg-video-canvas"></canvas>
-    </div>
-
-    <!-- Imagen del Palacio de Bellas Artes Iluminado de Noche Superpuesta al Video -->
+    <!-- Imagen del Palacio de Bellas Artes Iluminado de Noche -->
     <div class="monument-image-layer">
       <img src="./images/bellas-artes-hero.jpg" alt="Palacio de Bellas Artes iluminado de noche" class="monument-img" id="hero-monument-img">
       <div class="monument-gradient-blend"></div>
     </div>
+    <!-- Canvas de Bokeh Nocturno Flotante -->
+    <canvas id="bg-video-canvas" class="monument-bokeh-canvas"></canvas>
   </div>
 
   <!-- Capa 2b: Fondo Fijo de la Catedral Metropolitana Iluminada de Noche (Sección Inferior) -->
   <div class="catedral-fixed-backdrop" id="catedral-fixed-backdrop" aria-hidden="true">
-    <canvas id="catedral-video-canvas"></canvas>
     <div class="catedral-image-layer">
       <img src="./images/catedral-hero.jpg" alt="Catedral Metropolitana iluminada de noche" class="catedral-img" id="catedral-fixed-img">
       <div class="catedral-gradient-blend"></div>
     </div>
+    <!-- Canvas de Bokeh Nocturno Flotante -->
+    <canvas id="catedral-video-canvas" class="monument-bokeh-canvas"></canvas>
   </div>
 
   <!-- Capa 3: Canvas 3D Interactivo (Three.js - Vehículo Ejecutivo y Reflejos) -->
@@ -327,115 +323,6 @@
     </section>
 
     <!-- ========================================================
-         EXPERIENCIA DEL CONDUCTOR
-         ======================================================== -->
-    <section class="story-section experience-section" id="experiencia">
-      <div class="container hero-grid experience-grid">
-        <!-- Panel Editorial Izquierdo -->
-        <div class="experience-editorial-card">
-          <div>
-            <span class="eyebrow">Atención Dedicada</span>
-            <blockquote class="experience-quote">
-              "Su traslado es atendido directamente por quien conduce."
-            </blockquote>
-            <p class="experience-lead-text">
-              Comunicación transparente, puntualidad y esmero personal antes, durante y después del trayecto para personas que valoran la serenidad.
-            </p>
-          </div>
-          <div class="experience-brand-tag">
-            Regium Transporte Ejecutivo
-          </div>
-        </div>
-
-        <!-- Puntos Numéricos Derecha -->
-        <div class="experience-points-col">
-          <div class="experience-point-row">
-            <div class="point-badge">
-              01
-            </div>
-            <div>
-              <h3 class="point-title">Atención respetuosa</h3>
-              <p class="point-desc">Un servicio formal y discreto para personas con agenda rigurosa.</p>
-            </div>
-          </div>
-
-          <div class="experience-point-row">
-            <div class="point-badge">
-              02
-            </div>
-            <div>
-              <h3 class="point-title">Comunicación directa</h3>
-              <p class="point-desc">Seguimiento en tiempo real por WhatsApp desde la cotización hasta el destino final.</p>
-            </div>
-          </div>
-
-          <div class="experience-point-row">
-            <div class="point-badge">
-              03
-            </div>
-            <div>
-              <h3 class="point-title">Servicio organizado</h3>
-              <p class="point-desc">Horario previamente bloqueado y confirmación formal tras el pago aprobado.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================
-         EL VEHÍCULO / FLOTA
-         ======================================================== -->
-    <section class="fleet-section" id="vehiculo">
-      <div class="container">
-        <div class="fleet-showcase-card">
-          <div>
-            <span class="fleet-meta-tag">Unidad Ejecutiva Oficial</span>
-            <h2 class="fleet-title">Chevrolet Bolt EUV 2026</h2>
-            <p class="body-lead" style="margin-bottom: 24px;">
-              Una unidad moderna, sanitizada y silenciosa que garantiza un traslado descansado, amplio y seguro.
-            </p>
-            <div class="fleet-specs-grid">
-              <div class="fleet-spec-item">
-                <strong>Hasta 3 Pax</strong>
-                <span>Pasajeros cómodos</span>
-              </div>
-              <div class="fleet-spec-item">
-                <strong>4 Maletas</strong>
-                <span>2 grandes + 2 carry-on</span>
-              </div>
-              <div class="fleet-spec-item">
-                <strong>Wi-Fi & Agua</strong>
-                <span>Cortesía a bordo</span>
-              </div>
-            </div>
-            <div style="margin-top: 32px;">
-              <a href="#" class="btn btn-secondary magnetic-btn whatsapp-concierge-btn" data-service="Consulta de Equipaje y Capacidad">
-                <span>Preguntar por capacidad de equipaje</span>
-                <i data-lucide="chevron-right"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Silueta Visual Editorial con Reflejos -->
-          <div class="fleet-visual-preview">
-            <div class="fleet-light-sweep"></div>
-            <svg class="fleet-car-silhouette" viewBox="0 0 800 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M120 220 L160 140 Q220 70 360 65 L520 65 Q620 70 680 140 L720 180 Q760 210 740 230 L100 230 Q80 230 120 220 Z" fill="#0d1117" stroke="#c5a869" stroke-width="2"/>
-              <circle cx="210" cy="235" r="42" fill="#08090a" stroke="#ffffff" stroke-width="3"/>
-              <circle cx="210" cy="235" r="24" fill="#1b2028" stroke="#c5a869" stroke-width="1.5"/>
-              <circle cx="610" cy="235" r="42" fill="#08090a" stroke="#ffffff" stroke-width="3"/>
-              <circle cx="610" cy="235" r="24" fill="#1b2028" stroke="#c5a869" stroke-width="1.5"/>
-              <path d="M250 135 L330 85 L480 85 L480 135 Z" fill="#1a2636" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
-              <path d="M495 85 L560 85 L600 135 L495 135 Z" fill="#1a2636" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
-              <path d="M700 175 L735 185" stroke="#fceabb" stroke-width="4" stroke-linecap="round"/>
-              <path d="M105 180 L80 185" stroke="#ff3b30" stroke-width="4" stroke-linecap="round"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================
          SERVICIOS PRINCIPALES
          ======================================================== -->
     <section class="services-section" id="servicios">
@@ -546,6 +433,115 @@
             <span>Consultar disponibilidad</span>
             <i data-lucide="send"></i>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         EL VEHÍCULO / FLOTA
+         ======================================================== -->
+    <section class="fleet-section" id="vehiculo">
+      <div class="container">
+        <div class="fleet-showcase-card">
+          <div>
+            <span class="fleet-meta-tag">Unidad Ejecutiva Oficial</span>
+            <h2 class="fleet-title">Chevrolet Bolt EUV 2026</h2>
+            <p class="body-lead" style="margin-bottom: 24px;">
+              Una unidad moderna, sanitizada y silenciosa que garantiza un traslado descansado, amplio y seguro.
+            </p>
+            <div class="fleet-specs-grid">
+              <div class="fleet-spec-item">
+                <strong>Hasta 3 Pax</strong>
+                <span>Pasajeros cómodos</span>
+              </div>
+              <div class="fleet-spec-item">
+                <strong>4 Maletas</strong>
+                <span>2 grandes + 2 carry-on</span>
+              </div>
+              <div class="fleet-spec-item">
+                <strong>Wi-Fi & Agua</strong>
+                <span>Cortesía a bordo</span>
+              </div>
+            </div>
+            <div style="margin-top: 32px;">
+              <a href="#" class="btn btn-secondary magnetic-btn whatsapp-concierge-btn" data-service="Consulta de Equipaje y Capacidad">
+                <span>Preguntar por capacidad de equipaje</span>
+                <i data-lucide="chevron-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Silueta Visual Editorial con Reflejos -->
+          <div class="fleet-visual-preview">
+            <div class="fleet-light-sweep"></div>
+            <svg class="fleet-car-silhouette" viewBox="0 0 800 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M120 220 L160 140 Q220 70 360 65 L520 65 Q620 70 680 140 L720 180 Q760 210 740 230 L100 230 Q80 230 120 220 Z" fill="#0d1117" stroke="#c5a869" stroke-width="2"/>
+              <circle cx="210" cy="235" r="42" fill="#08090a" stroke="#ffffff" stroke-width="3"/>
+              <circle cx="210" cy="235" r="24" fill="#1b2028" stroke="#c5a869" stroke-width="1.5"/>
+              <circle cx="610" cy="235" r="42" fill="#08090a" stroke="#ffffff" stroke-width="3"/>
+              <circle cx="610" cy="235" r="24" fill="#1b2028" stroke="#c5a869" stroke-width="1.5"/>
+              <path d="M250 135 L330 85 L480 85 L480 135 Z" fill="#1a2636" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+              <path d="M495 85 L560 85 L600 135 L495 135 Z" fill="#1a2636" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+              <path d="M700 175 L735 185" stroke="#fceabb" stroke-width="4" stroke-linecap="round"/>
+              <path d="M105 180 L80 185" stroke="#ff3b30" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         EXPERIENCIA DEL CONDUCTOR
+         ======================================================== -->
+    <section class="story-section experience-section" id="experiencia">
+      <div class="container hero-grid experience-grid">
+        <!-- Panel Editorial Izquierdo -->
+        <div class="experience-editorial-card">
+          <div>
+            <span class="eyebrow">Atención Dedicada</span>
+            <blockquote class="experience-quote">
+              "Su traslado es atendido directamente por quien conduce."
+            </blockquote>
+            <p class="experience-lead-text">
+              Comunicación transparente, puntualidad y esmero personal antes, durante y después del trayecto para personas que valoran la serenidad.
+            </p>
+          </div>
+          <div class="experience-brand-tag">
+            Regium Transporte Ejecutivo
+          </div>
+        </div>
+
+        <!-- Puntos Numéricos Derecha -->
+        <div class="experience-points-col">
+          <div class="experience-point-row">
+            <div class="point-badge">
+              01
+            </div>
+            <div>
+              <h3 class="point-title">Atención respetuosa</h3>
+              <p class="point-desc">Un servicio formal y discreto para personas con agenda rigurosa.</p>
+            </div>
+          </div>
+
+          <div class="experience-point-row">
+            <div class="point-badge">
+              02
+            </div>
+            <div>
+              <h3 class="point-title">Comunicación directa</h3>
+              <p class="point-desc">Seguimiento en tiempo real por WhatsApp desde la cotización hasta el destino final.</p>
+            </div>
+          </div>
+
+          <div class="experience-point-row">
+            <div class="point-badge">
+              03
+            </div>
+            <div>
+              <h3 class="point-title">Servicio organizado</h3>
+              <p class="point-desc">Horario previamente bloqueado y confirmación formal tras el pago aprobado.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
