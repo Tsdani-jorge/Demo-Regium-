@@ -273,7 +273,7 @@ body:hover .custom-cursor {
 }
 
 /* ==========================================
-   SITE HEADER / HUD MINIMALISTA
+   SITE HEADER / HUD MINIMALISTA (APPLE FLOATING ISLAND)
    ========================================== */
 .site-header {
   position: fixed;
@@ -284,19 +284,37 @@ body:hover .custom-cursor {
   z-index: 100;
   display: flex;
   align-items: center;
-  transition: background-color 0.4s var(--ease-cinematic), backdrop-filter 0.4s;
+  pointer-events: none;
+  transition: all 0.4s var(--ease-cinematic);
 }
 
 .site-header.scrolled {
-  background: rgba(8, 9, 10, 0.78);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--glass-border);
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: none;
 }
 
 .header-container {
+  pointer-events: auto;
+  width: min(calc(100% - 48px), 1140px);
+  margin-inline: auto;
+  padding: 10px 24px;
+  background: rgba(14, 16, 22, 0.72);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: all 0.35s var(--ease-cinematic);
+}
+
+.site-header.scrolled .header-container {
+  background: rgba(8, 9, 12, 0.88);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .brand-wrapper {
@@ -562,6 +580,41 @@ body:hover .custom-cursor {
   z-index: 5;
 }
 
+/* Apple Hero Pill Chip */
+.hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #f1f3f5;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.chip-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #30d158;
+  box-shadow: 0 0 10px rgba(48, 209, 88, 0.9);
+  animation: chipPulse 2s infinite ease-in-out;
+  flex-shrink: 0;
+}
+
+@keyframes chipPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
 .hero-actions {
   display: flex;
   align-items: center;
@@ -757,7 +810,110 @@ body:hover .custom-cursor {
 }
 
 /* ==========================================
-   SECCIÓN DE SERVICIOS (GLASS TILES 3D)
+   LA DIFERENCIA REGIUM (APPLE BENTO MATRIX)
+   ========================================== */
+.apple-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 52px;
+}
+
+.bento-card {
+  background: rgba(16, 18, 24, 0.65);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s var(--ease-cinematic), border-color 0.4s, box-shadow 0.4s;
+}
+
+.bento-card:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+  transform: translateY(-4px);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.bento-card-featured {
+  grid-column: span 3;
+  padding: 44px 38px;
+  background: linear-gradient(135deg, rgba(22, 26, 36, 0.75) 0%, rgba(12, 14, 18, 0.9) 100%);
+  border-color: rgba(197, 168, 105, 0.28);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.bento-card-featured:hover {
+  border-color: var(--gold-light);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 35px var(--gold-glow), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.bento-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.bento-tag {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+}
+
+.bento-pill-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  background: rgba(48, 209, 88, 0.12);
+  border: 1px solid rgba(48, 209, 88, 0.28);
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #30d158;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.bento-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.bento-card-featured .bento-title {
+  font-size: clamp(1.65rem, 3vw, 2.3rem);
+  letter-spacing: -0.035em;
+}
+
+.bento-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.68;
+  margin: 0;
+}
+
+.bento-card-featured .bento-desc {
+  font-size: 1.05rem;
+  max-width: 800px;
+}
+
+/* ==========================================
+   SECCIÓN DE SERVICIOS (LUXURY ROUTE CARDS)
    ========================================== */
 .services-section {
   padding: 140px 0;
@@ -774,16 +930,18 @@ body:hover .custom-cursor {
 
 .service-glass-card {
   position: relative;
-  background: rgba(16, 18, 22, 0.7);
-  backdrop-filter: blur(24px);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-md);
-  padding: 40px 32px;
+  background: rgba(16, 18, 24, 0.68);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 38px 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 380px;
+  min-height: 400px;
   overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transition: all 0.4s var(--ease-cinematic);
   transform-style: preserve-3d;
 }
@@ -804,21 +962,47 @@ body:hover .custom-cursor {
 }
 
 .service-glass-card:hover {
-  border-color: var(--glass-border-hover);
-  transform: translateY(-8px);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8), 0 0 30px var(--gold-glow);
+  border-color: rgba(255, 255, 255, 0.24);
+  transform: translateY(-6px);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.route-header-tag {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.route-num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 0.1em;
+}
+
+.route-tag-sub {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .service-icon-box {
-  width: 58px;
-  height: 58px;
-  border-radius: var(--radius-sm);
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
   background: rgba(197, 168, 105, 0.1);
   border: 1px solid rgba(197, 168, 105, 0.25);
   display: grid;
   place-items: center;
   color: var(--gold-light);
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .service-card-title {
@@ -991,34 +1175,38 @@ body:hover .custom-cursor {
 
 .timeline-track {
   position: relative;
-  margin-top: 70px;
+  margin-top: 60px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
 .timeline-step-card {
-  background: rgba(16, 18, 22, 0.6);
-  backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-md);
-  padding: 32px 24px;
+  background: rgba(16, 18, 24, 0.65);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  padding: 36px 30px;
   position: relative;
-  transition: all 0.3s;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.35s var(--ease-cinematic);
 }
 
 .timeline-step-card:hover {
-  border-color: var(--gold-light);
-  transform: translateY(-6px);
-  background: rgba(22, 26, 32, 0.85);
+  border-color: rgba(255, 255, 255, 0.22);
+  transform: translateY(-4px);
+  background: rgba(22, 26, 36, 0.85);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .timeline-step-num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.74rem;
-  font-weight: 800;
-  letter-spacing: 0.2em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   color: var(--gold-light);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   display: block;
 }
 
@@ -1317,9 +1505,9 @@ body:hover .custom-cursor {
   text-transform: uppercase;
 }
 
-/* Micro-Grid Razones de Confianza (Estilo Ejecutivo Apple) */
+/* Micro-Grid Razones de Confianza (Estilo Técnico Adidas / Precision) */
 .trust-strip-section {
-  padding: 48px 0;
+  padding: 40px 0 60px;
   position: relative;
   z-index: 10;
 }
@@ -1331,29 +1519,35 @@ body:hover .custom-cursor {
 }
 
 .trust-strip-item {
-  background: rgba(16, 20, 26, 0.45);
-  border: 1px solid var(--glass-border);
-  padding: 18px 22px;
-  border-radius: var(--radius-sm);
+  background: rgba(14, 16, 22, 0.62);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px 24px;
   display: flex;
   align-items: center;
   gap: 14px;
   font-size: 0.92rem;
   font-weight: 600;
-  color: #e5e7eb;
+  color: #f1f3f5;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
   transition: border-color 0.3s, transform 0.3s, background-color 0.3s;
 }
 
 .trust-strip-item:hover {
-  border-color: rgba(197, 168, 105, 0.35);
-  background: rgba(22, 28, 36, 0.6);
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(20, 24, 32, 0.85);
   transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.16);
 }
 
-.trust-strip-item svg {
+.trust-item-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.74rem;
+  font-weight: 700;
   color: var(--gold-light);
-  width: 18px;
-  height: 18px;
+  letter-spacing: 0.08em;
   flex-shrink: 0;
 }
 
@@ -1493,17 +1687,21 @@ body:hover .custom-cursor {
 }
 
 .faq-card {
-  background: rgba(16, 20, 26, 0.6);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-md);
-  padding: 22px 28px;
+  background: rgba(16, 18, 24, 0.62);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 24px 30px;
   cursor: pointer;
-  transition: border-color 0.3s, background-color 0.3s;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
 }
 
 .faq-card[open] {
-  border-color: rgba(197, 168, 105, 0.3);
-  background: rgba(20, 26, 34, 0.75);
+  border-color: rgba(197, 168, 105, 0.35);
+  background: rgba(22, 26, 36, 0.82);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 .faq-summary {
@@ -1553,10 +1751,19 @@ body:hover .custom-cursor {
 }
 
 .policy-card {
-  background: rgba(16, 20, 26, 0.65);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-md);
-  padding: 32px;
+  background: rgba(16, 18, 24, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  padding: 36px 32px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.policy-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
 .policy-title {
@@ -1739,6 +1946,14 @@ body:hover .custom-cursor {
     grid-template-columns: 1fr;
   }
 
+  .apple-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bento-card-featured {
+    grid-column: span 2;
+  }
+
   .fleet-showcase-card {
     grid-template-columns: 1fr;
   }
@@ -1907,6 +2122,31 @@ body:hover .custom-cursor {
 
   .section-intro {
     margin-bottom: 30px;
+  }
+
+  /* Apple Bento Grid Mobile */
+  .apple-bento-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  .bento-card-featured {
+    grid-column: span 1;
+    padding: 26px 20px;
+  }
+
+  .bento-card {
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+
+  .bento-title {
+    font-size: 1.25rem;
+  }
+
+  .bento-card-featured .bento-title {
+    font-size: 1.4rem;
   }
 
   /* Services Grid */
