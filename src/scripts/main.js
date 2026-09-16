@@ -63,9 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
-  // 4b. Transición Cinemática: Video + Catedral se desvanecen al bajar para dar paso al Fondo de Puro Lujo
+  // 4b. Transición Cinemática: Video + Palacio de Bellas Artes se desvanecen al bajar para dar paso al Fondo de Puro Lujo
   const heroBackdrop = document.getElementById('hero-backdrop');
-  const catedralImg = document.getElementById('catedral-hero-img');
+  const monumentImg = document.getElementById('hero-monument-img') || document.getElementById('catedral-hero-img');
   if (heroBackdrop) {
     gsap.to(heroBackdrop, {
       opacity: 0,
@@ -81,8 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (catedralImg) {
-    gsap.to(catedralImg, {
+  if (monumentImg) {
+    gsap.to(monumentImg, {
       y: -80,
       ease: 'none',
       scrollTrigger: {
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 6. Section Reveals with GSAP
-  const cards = document.querySelectorAll('.waypoint-card, .service-glass-card, .timeline-step-card, .testimonial-card');
+  const cards = document.querySelectorAll('.service-glass-card, .timeline-step-card, .testimonial-card, .trust-strip-item, .policy-card, .faq-card');
   cards.forEach((card) => {
     gsap.fromTo(
       card,
