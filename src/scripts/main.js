@@ -94,6 +94,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 4c. Parallax Cinemático para la Catedral en la Sección Final
+  const catedralCtaImg = document.getElementById('catedral-cta-img');
+  if (catedralCtaImg) {
+    gsap.fromTo(
+      catedralCtaImg,
+      { y: -35, scale: 1.08 },
+      {
+        y: 35,
+        scale: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '#contacto',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+        },
+      }
+    );
+  }
+
   // 5. Header Scroll State
   const siteHeader = document.querySelector('.site-header');
   window.addEventListener('scroll', () => {
