@@ -1144,21 +1144,19 @@ body:hover .custom-cursor {
 }
 
 /* ==========================================
-   GRAN CTA FINAL CONCIERGE (CON FONDO DE LA CATEDRAL)
+   SECCIÓN INFERIOR MONUMENTAL: CATEDRAL METROPOLITANA DE NOCHE
    ========================================== */
-.final-cta-section {
-  padding: 160px 0 130px;
+.catedral-section {
   position: relative;
-  z-index: 10;
-  text-align: center;
-}
-
-.final-cta-section.has-landmark-bg {
-  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
   overflow: hidden;
+  padding: 140px 0;
+  background-color: #08090a;
 }
 
-.section-landmark-backdrop {
+.catedral-backdrop-layer {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1168,45 +1166,53 @@ body:hover .custom-cursor {
   overflow: hidden;
 }
 
-.section-monument-img {
+.catedral-backdrop-layer canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.catedral-section .catedral-image-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.catedral-section .catedral-monument-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
-  opacity: 0.58;
-  filter: contrast(1.12) brightness(0.96);
-  transform: scale(1.05);
+  opacity: 0.88;
+  filter: contrast(1.1) brightness(1.02);
+  transform: scale(1.02);
   transition: transform 0.6s var(--ease-cinematic);
 }
 
-.section-monument-blend {
+.catedral-section .catedral-gradient-blend {
   position: absolute;
   inset: 0;
   background: 
     linear-gradient(to bottom, 
       rgba(8, 9, 10, 1) 0%, 
-      rgba(8, 9, 10, 0.42) 25%, 
-      rgba(8, 9, 10, 0.55) 70%, 
+      rgba(8, 9, 10, 0.45) 18%, 
+      rgba(8, 9, 10, 0.3) 50%, 
+      rgba(8, 9, 10, 0.65) 80%, 
       rgba(8, 9, 10, 1) 100%
     ),
-    radial-gradient(circle at center, transparent 25%, rgba(8, 9, 10, 0.75) 100%);
+    radial-gradient(circle at 65% 50%, transparent 35%, rgba(8, 9, 10, 0.75) 100%);
 }
 
-.final-cta-section .container {
+.catedral-section .hero-grid {
   position: relative;
   z-index: 5;
-}
-
-.final-cta-box {
-  max-width: 860px;
-  margin-inline: auto;
-  background: radial-gradient(circle at center, rgba(197, 168, 105, 0.1) 0%, rgba(10, 12, 16, 0.82) 75%);
-  border: 1px solid var(--glass-border-hover);
-  border-radius: var(--radius-lg);
-  padding: clamp(48px, 8vw, 84px) clamp(24px, 5vw, 64px);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8), 0 0 60px var(--gold-glow);
 }
 
 .cta-huge-title {
@@ -2132,37 +2138,26 @@ body:hover .custom-cursor {
     margin-bottom: 22px;
   }
 
-  /* Final CTA con Fondo de Catedral */
-  .final-cta-section,
-  .final-cta-section.has-landmark-bg {
-    padding: 68px 0 48px;
+  /* Sección Catedral Metropolitana en Móvil */
+  .catedral-section {
+    min-height: 90svh;
+    padding: 58px 0 44px;
   }
 
-  .final-cta-section .section-monument-img {
-    object-position: center 25%;
-    opacity: 0.48;
+  .catedral-section .catedral-monument-img {
+    object-position: center 20%;
+    opacity: 0.85;
   }
 
-  .final-cta-section .section-monument-blend {
+  .catedral-section .catedral-gradient-blend {
     background: 
       linear-gradient(to bottom, 
         rgba(8, 9, 10, 1) 0%, 
-        rgba(8, 9, 10, 0.48) 22%, 
-        rgba(8, 9, 10, 0.62) 70%, 
-        rgba(8, 9, 10, 1) 100%
+        rgba(8, 9, 10, 0.4) 18%, 
+        rgba(8, 9, 10, 0.52) 60%, 
+        rgba(8, 9, 10, 0.98) 100%
       ),
-      radial-gradient(circle at center, transparent 15%, rgba(8, 9, 10, 0.8) 100%);
-  }
-
-  .final-cta-box {
-    padding: 32px 16px;
-    border-radius: 20px;
-    background: radial-gradient(circle at center, rgba(197, 168, 105, 0.08) 0%, rgba(10, 12, 16, 0.88) 80%);
-  }
-
-  .cta-huge-title {
-    font-size: clamp(1.8rem, 6.5vw, 2.4rem);
-    margin-bottom: 12px;
+      radial-gradient(circle at center, transparent 25%, rgba(8, 9, 10, 0.75) 100%);
   }
 
   /* Footer */

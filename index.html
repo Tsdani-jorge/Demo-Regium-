@@ -682,28 +682,54 @@
     </section>
 
     <!-- ========================================================
-         CTA FINAL CON FONDO CINEMÁTICO (CATEDRAL METROPOLITANA)
+         SECCIÓN INFERIOR MONUMENTAL: CATEDRAL METROPOLITANA
          ======================================================== -->
-    <section class="final-cta-section has-landmark-bg" id="contacto">
-      <!-- Capa de Fondo Catedral Metropolitana de Noche -->
-      <div class="section-landmark-backdrop" aria-hidden="true">
-        <img src="./images/catedral-hero.jpg" alt="Catedral Metropolitana de noche iluminada" class="section-monument-img" id="catedral-cta-img">
-        <div class="section-monument-blend"></div>
+    <section class="story-section catedral-section" id="contacto">
+      <!-- Capa de Fondo Catedral Metropolitana de Noche + Video Bokeh -->
+      <div class="catedral-backdrop-layer" aria-hidden="true">
+        <canvas id="catedral-video-canvas"></canvas>
+        <div class="catedral-image-layer">
+          <img src="./images/catedral-hero.jpg" alt="Catedral Metropolitana de noche iluminada" class="catedral-monument-img" id="catedral-monument-img">
+          <div class="catedral-gradient-blend"></div>
+        </div>
       </div>
 
-      <div class="container">
-        <div class="final-cta-box">
-          <span class="eyebrow" style="margin-bottom: 14px;">Atención Directa</span>
-          <h2 class="cta-huge-title">
-            Su tiempo importa.<br>Su tranquilidad también.
+      <div class="container hero-grid" style="position: relative; z-index: 5;">
+        <div class="hero-content">
+          <span class="eyebrow">Atención Directa · Reservación Segura</span>
+          <h2 class="display-title">
+            Su tiempo importa.<br><span class="gold-gradient">Su tranquilidad también.</span>
           </h2>
-          <p class="body-lead" style="margin-inline: auto; margin-bottom: 36px;">
-            Envíe los datos de su traslado para revisar disponibilidad de agenda y recibir su cotización inmediata sin compromiso.
+          <p class="body-lead">
+            Traslados ejecutivos organizados con atención directa y chofer profesional. Envíe los datos de su viaje para recibir su cotización inmediata y confirmar su horario exclusivo.
           </p>
-          <a href="#" class="btn btn-primary magnetic-btn whatsapp-concierge-btn btn-glow-pulse" style="min-height: 60px; padding-inline: 44px; font-size: 1.05rem;" data-service="Cotización Inmediata Regium">
-            <span>Cotizar por WhatsApp</span>
-            <i data-lucide="send"></i>
-          </a>
+          <div class="hero-actions">
+            <a href="#" class="btn btn-primary magnetic-btn whatsapp-concierge-btn btn-glow-pulse" style="min-height: 56px; padding-inline: 40px; font-size: 1.02rem;" data-service="Cotización Inmediata Regium">
+              <span>Cotizar por WhatsApp</span>
+              <i data-lucide="send"></i>
+            </a>
+            <a href="tel:+528114749578" class="btn btn-secondary magnetic-btn hero-secondary-btn">
+              <i data-lucide="phone"></i>
+              <span>81 1474 9578</span>
+            </a>
+          </div>
+
+          <div class="hero-trust-bar">
+            <div class="hero-trust-item">
+              <i data-lucide="shield"></i>
+              <span>Reservación Garantizada</span>
+            </div>
+            <span class="hero-trust-dot">·</span>
+            <div class="hero-trust-item">
+              <i data-lucide="check"></i>
+              <span>Tarifa Confirmada</span>
+            </div>
+            <span class="hero-trust-dot">·</span>
+            <div class="hero-trust-item">
+              <i data-lucide="phone"></i>
+              <span>Atención Directa</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

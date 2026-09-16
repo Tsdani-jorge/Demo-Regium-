@@ -94,14 +94,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4c. Parallax Cinemático para la Catedral en la Sección Final
-  const catedralCtaImg = document.getElementById('catedral-cta-img');
-  if (catedralCtaImg) {
+  // 4c. Parallax Cinemático para la Catedral en la Sección Inferior
+  const catedralMonumentImg = document.getElementById('catedral-monument-img') || document.getElementById('catedral-cta-img');
+  if (catedralMonumentImg) {
     gsap.fromTo(
-      catedralCtaImg,
-      { y: -35, scale: 1.08 },
+      catedralMonumentImg,
+      { y: -60, scale: 1.06 },
       {
-        y: 35,
+        y: 40,
         scale: 1,
         ease: 'none',
         scrollTrigger: {
@@ -195,6 +195,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 12. Initialize Background Motion Video / Bokeh Loop
   new CityVideoBackground('bg-video-canvas', 'bg-video');
+  if (document.getElementById('catedral-video-canvas')) {
+    new CityVideoBackground('catedral-video-canvas');
+  }
 
   // 13. Mobile Drawer Navigation Controller
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
