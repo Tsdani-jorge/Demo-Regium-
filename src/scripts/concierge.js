@@ -1,8 +1,8 @@
 // Enlaces de WhatsApp con la plantilla de solicitud de cotización
 
 const PHONE = '528114749578';
-const DEFAULT_ORIGIN = 'Allende / Santiago / Monterrey';
-const DEFAULT_DEST = 'Aeropuerto Internacional MTY / Zona Metropolitana';
+const DEFAULT_ORIGIN = 'CDMX / Polanco / Santa Fe';
+const DEFAULT_DEST = 'Aeropuerto AICM / AIFA / Zona Metropolitana';
 
 const buildMessage = (service, origin, destination) =>
   [

@@ -1,6 +1,6 @@
 # Regium Transporte Ejecutivo — Sitio oficial
 
-Sitio de **Regium Transporte Ejecutivo**: traslados privados con reservación previa desde Allende y Santiago hacia Monterrey, su zona metropolitana y el Aeropuerto Internacional de Monterrey.
+Sitio de **Regium Transporte Ejecutivo**: traslados privados con reservación previa en la Ciudad de México, zona metropolitana y aeropuertos (AICM, AIFA y Toluca).
 
 ---
 
