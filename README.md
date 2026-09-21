@@ -1,40 +1,29 @@
-# Regium Transporte Ejecutivo — Experiencia Digital Inmersiva
+# Regium Transporte Ejecutivo — Sitio oficial
 
-Landing page de clase mundial para **Regium Transporte Ejecutivo** (Allende, Santiago, Monterrey y Aeropuerto Internacional de Monterrey). Diseñada con una dirección de arte cinematográfica inspirada en *Tesla, Apple y Aman Resorts*, combinando fondos dinámicos en video nocturno, composición monumental de la Catedral Metropolitana, partículas 3D en WebGL y una transición fluida hacia un entorno de puro lujo accesible.
-
----
-
-## Características Principales
-
-* **Fondo Hero en Capas:** Video nocturno de ciudad en bucle fluido con la imagen de la Catedral Metropolitana iluminada de noche superpuesta con máscara radial difuminada.
-* **Transición Cinematográfica (Scroll Storytelling):** Desvanecimiento suave del hero hacia un fondo negro obsidiana aterciopelado con sutiles halos dorados (*Aman / Tesla Luxury*).
-* **Partículas 3D y WebGL:** Renderizado con **Three.js** con micro-paralaje al mover el cursor y respuesta al scroll a 60 FPS fijos.
-* **100% Adaptado para Móviles (Smartphones):**
-  * Menú drawer deslizante con efecto *Glassmorphism* y desenfoque de 28px.
-  * Botón hamburguesa animado en oro champagne.
-  * Dock inferior fijo con soporte para áreas seguras (`safe-area-inset-bottom`) de iOS y Android para cotización instantánea por WhatsApp.
-  * Encuadre vertical optimizado de la Catedral y tipografía adaptativa con `clamp()`.
-* **Audio de Cabina Silenciosa:** Sintetizador procedural con **Web Audio API** que reproduce el zumbido hipnótico de un vehículo eléctrico de alta gama sin necesidad de descargar archivos externos.
-* **Concierge WhatsApp:** Enlace dinámico con plantilla estructurada de cotización (origen, destino, fecha, horario, pasajeros, equipaje y número de vuelo).
-* **Información Comercial Real:**
-  * 4 pilares: Reservación confirmada, atención personal, tarifa acordada sin sorpresas, agua y Wi-Fi a bordo.
-  * Flota oficial: **Chevrolet Bolt EUV 2026**.
-  * Rutas: Allende, Santiago, Monterrey, Aeropuerto MTY y eventos de ida y vuelta.
-  * Proceso de reservación en 3 pasos.
-  * Políticas de cancelación claras (48h/24h) y esperas en aeropuerto (30/60 min).
+Sitio de **Regium Transporte Ejecutivo**: traslados privados con reservación previa desde Allende y Santiago hacia Monterrey, su zona metropolitana y el Aeropuerto Internacional de Monterrey.
 
 ---
 
-## Stack Tecnológico
+## Dirección de diseño
+
+* **Editorial y sobria:** titulares en serif (Cormorant) con texto en grotesca (Hanken Grotesk); negro cálido, marfil y un único acento latón.
+* **Fotografía a sangre** en la portada y en el cierre, con paralaje lento.
+* **Estructura con líneas finas** en lugar de tarjetas: servicios como índice, especificaciones del vehículo como ficha técnica y políticas como tabla.
+* **Flota en carrusel giratorio 3D:** Suburban, Escalade, Yukon, sedán y Bolt EUV en un anillo que rota solo, con flechas, teclado y arrastre; la silueta de cada unidad se dibuja al quedar al frente.
+* **Animaciones:** telón de entrada (una vez por sesión), titulares que suben palabra por palabra, líneas finas que se dibujan, fotografía de cierre que se abre como ventana. Todo respeta `prefers-reduced-motion`.
+* **Móvil:** menú a pantalla completa y barra inferior con "Llamar" y "Cotizar por WhatsApp" que aparece al bajar.
+* **WhatsApp:** cada botón abre una solicitud de cotización prellenada con el servicio, salida y destino.
+
+---
+
+## Tecnologías
 
 | Tecnología | Propósito |
 | :--- | :--- |
-| **Vite** | Empaquetador ultrarrápido y servidor de desarrollo HMR |
-| **Three.js** | Escenario 3D WebGL y sistema de partículas con iluminación PBR |
-| **GSAP + ScrollTrigger** | Coreografía de animaciones sincronizadas al scroll |
-| **Lenis** | Desplazamiento suave cinemático (*Smooth Scroll*) |
-| **Lucide Icons** | Iconografía minimalista en SVG |
-| **CSS Moderno** | Glassmorphism nativo, variables de diseño y diseño adaptativo para móviles |
+| **Vite** | Servidor de desarrollo y compilación |
+| **GSAP + ScrollTrigger** | Apariciones y paralaje al desplazarse |
+| **Lenis** | Desplazamiento suave |
+| **CSS** | Sistema de diseño con variables, sin framework |
 
 ---
 
@@ -87,17 +76,15 @@ Este repositorio incluye una acción de **GitHub Actions** (`.github/workflows/d
 │       └── deploy.yml        # Despliegue automático a GitHub Pages
 ├── public/
 │   └── images/
-│       └── catedral-hero.jpg # Fotografía monumental de la Catedral
+│       ├── bellas-artes-hero.jpg # Fotografía de portada
+│       └── catedral-hero.jpg     # Fotografía de cierre
 ├── src/
 │   ├── scripts/
-│   │   ├── audio.js          # Sintetizador procedural Web Audio API
-│   │   ├── cityVideo.js      # Motor de fondo nocturno y canvas bokeh
-│   │   ├── concierge.js      # Generador de enlaces estructurados a WhatsApp
-│   │   ├── cursor.js         # Cursor magnético con inercia
-│   │   ├── main.js           # Orquestador central (Lenis, GSAP, Drawer móvil)
-│   │   └── threeScene.js     # Canvas Three.js y partículas doradas
+│   │   ├── concierge.js      # Enlaces de WhatsApp con la solicitud prellenada
+│   │   ├── fleet.js          # Carrusel giratorio de la flota
+│   │   └── main.js           # Desplazamiento, menú móvil y animaciones
 │   └── styles/
-│       └── main.css          # Sistema de diseño, Glassmorphism y responsive
+│       └── main.css          # Sistema de diseño y responsive
 ├── index.html                # Estructura semántica principal
 ├── vite.config.js            # Configuración de rutas relativas y build
 ├── package.json              # Dependencias y scripts
