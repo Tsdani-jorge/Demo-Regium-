@@ -283,6 +283,37 @@ ol {
   gap: 32px;
 }
 
+.site-logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.site-logo {
+  height: clamp(38px, 4.5vw, 48px);
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+  transition: transform 0.35s var(--ease), opacity 0.35s var(--ease);
+}
+
+.site-logo:hover {
+  transform: scale(1.03);
+  opacity: 0.95;
+}
+
+.footer-logo-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.footer-logo {
+  height: clamp(44px, 5vw, 54px);
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
 .wordmark {
   display: inline-flex;
   flex-direction: column;
@@ -1078,6 +1109,14 @@ ol {
 
 .js.intro-seen .intro {
   display: none;
+}
+
+.intro-logo {
+  width: min(280px, 72vw);
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+  filter: drop-shadow(0 4px 20px rgba(201, 173, 127, 0.15));
 }
 
 .intro-word {

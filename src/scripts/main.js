@@ -184,9 +184,9 @@ document.addEventListener('DOMContentLoaded', () => {
         lenis?.start();
       },
     })
-      .fromTo('.intro-word', { opacity: 0, letterSpacing: '0.4em' }, { opacity: 1, letterSpacing: '0.08em', duration: 1.3, ease: 'power3.out' })
+      .fromTo('.intro-word, .intro-logo', { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 1.3, ease: 'power3.out' })
       .to('.intro-line', { scaleX: 1, duration: 0.9, ease: 'power3.inOut' }, 0.35)
-      .to(['.intro-word', '.intro-line'], { opacity: 0, y: -12, duration: 0.5, ease: 'power2.in' }, '+=0.25')
+      .to(['.intro-word', '.intro-logo', '.intro-line'], { opacity: 0, y: -12, duration: 0.5, ease: 'power2.in' }, '+=0.25')
       .to(intro, { yPercent: -100, duration: 1.1, ease: 'power4.inOut' }, '-=0.1')
       .add(() => heroIntro.play(), '-=0.75');
   } else {
